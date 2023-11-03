@@ -1,0 +1,494 @@
+{
+    "today": {
+        "registered_labs": 25,
+        "registered_labs_increase": 3,
+        "citizens_positive_cases": 2450,
+        "citizens_positive_cases_increase": 32,
+        "citizens_negative_cases": 93425,
+        "citizens_negative_cases_increase": 16,
+        "foreigners_positive_cases": 12394,
+        "foreigners_negative_cases": 90784,
+        "males": 1932,
+        "females": 518,
+        "travel": 123932,
+        "screening": 47965,
+        "cases_by_county": [
+            {
+                "county": "mombasa",
+                "region": "coast",
+                "cases": {
+                    "positive": 15000,
+                    "negative": 7934
+                }
+            },
+            {
+                "county": "kwale",
+                "region": "coast",
+                "cases": {
+                    "positive": 8270,
+                    "negative": 3409
+                }
+            },
+            {
+                "county": "kilifi",
+                "region": "coast",
+                "cases": {
+                    "positive": 7934,
+                    "negative": 3394
+                }
+            },
+            {
+                "county": "tana_river",
+                "region": "coast",
+                "cases": {
+                    "positive": 1500,
+                    "negative": 1000
+                }
+            },
+            {
+                "county": "lamu",
+                "region": "coast",
+                "cases": {
+                    "positive": 6497,
+                    "negative": 7934
+                }
+            },
+            {
+                "county": "taita-taveta",
+                "region": "coast",
+                "cases": {
+                    "positive": 18769,
+                    "negative": 8302
+                }
+            },
+            {
+                "county": "garissa",
+                "region": "north_eastern",
+                "cases": {
+                    "positive": 18769,
+                    "negative": 11415
+                }
+            },
+            {
+                "county": "wajir",
+                "region": "north_eastern",
+                "cases": {
+                    "positive": 3348,
+                    "negative": 8302
+                }
+            },
+            {
+                "county": "mandera",
+                "region": "north_eastern",
+                "cases": {
+                    "positive": 3617,
+                    "negative": 5275
+                }
+            },
+            {
+                "county": "marsabit",
+                "region": "eastern",
+                "cases": {
+                    "positive": 3617,
+                    "negative": 5275
+                }
+            },
+            {
+                "county": "isiolo",
+                "region": "eastern",
+                "cases": {
+                    "positive": 3617,
+                    "negative": 5275
+                }
+            },
+            {
+                "county": "meru",
+                "region": "eastern",
+                "cases": {
+                    "positive": 12523,
+                    "negative": 13998
+                }
+            },
+            {
+                "county": "tharaka-nithi",
+                "region": "eastern",
+                "cases": {
+                    "positive": 13804,
+                    "negative": 8730
+                }
+            },
+            {
+                "county": "embu",
+                "region": "eastern",
+                "cases": {
+                    "positive": 10662,
+                    "negative": 5993
+                }
+            },
+            {
+                "county": "kitui",
+                "region": "eastern",
+                "cases": {
+                    "positive": 5005,
+                    "negative": 4526
+                }
+            },
+            {
+                "county": "machakos",
+                "region": "eastern",
+                "cases": {
+                    "positive": 9760,
+                    "negative": 14877
+                }
+            },
+            {
+                "county": "makueni",
+                "region": "eastern",
+                "cases": {
+                    "positive": 7120,
+                    "negative": 7335
+                }
+            },
+            {
+                "county": "nyandarua",
+                "region": "central",
+                "cases": {
+                    "positive": 8794,
+                    "negative": 3109
+                }
+            },
+            {
+                "county": "nyeri",
+                "region": "central",
+                "cases": {
+                    "positive": 194,
+                    "negative": 630
+                }
+            },
+            {
+                "county": "kirinyaga",
+                "region": "central",
+                "cases": {
+                    "positive": 3167,
+                    "negative": 6522
+                }
+            },
+            {
+                "county": "murang'a",
+                "region": "central",
+                "cases": {
+                    "positive": 13613,
+                    "negative": 6771
+                }
+            },
+            {
+                "county": "kiambu",
+                "region": "central",
+                "cases": {
+                    "positive": 907,
+                    "negative": 64
+                }
+            },
+            {
+                "county": "turkana",
+                "region": "rift_valley",
+                "cases": {
+                    "positive": 4470,
+                    "negative": 7494
+                }
+            },
+            {
+                "county": "turkana",
+                "region": "rift_valley",
+                "cases": {
+                    "positive": 4314,
+                    "negative": 12992
+                }
+            },
+            {
+                "county": "turkana",
+                "region": "rift_valley",
+                "cases": {
+                    "positive": 17660,
+                    "negative": 13451
+                }
+            },
+            {
+                "county": "turkana",
+                "region": "rift_valley",
+                "cases": {
+                    "positive": 13796,
+                    "negative": 6872
+                }
+            },
+            {
+                "county": "turkana",
+                "region": "rift_valley",
+                "cases": {
+                    "positive": 13476,
+                    "negative": 8146
+                }
+            },
+            {
+                "county": "turkana",
+                "region": "rift_valley",
+                "cases": {
+                    "positive": 3626,
+                    "negative": 9784
+                }
+            },
+            {
+                "county": "turkana",
+                "region": "rift_valley",
+                "cases": {
+                    "positive": 18593,
+                    "negative": 12373
+                }
+            },
+            {
+                "county": "turkana",
+                "region": "rift_valley",
+                "cases": {
+                    "positive": 7073,
+                    "negative": 9825
+                }
+            },
+            {
+                "county": "turkana",
+                "region": "rift_valley",
+                "cases": {
+                    "positive": 13480,
+                    "negative": 18733
+                }
+            },
+            {
+                "county": "turkana",
+                "region": "rift_valley",
+                "cases": {
+                    "positive": 3241,
+                    "negative": 12075
+                }
+            },
+            {
+                "county": "turkana",
+                "region": "rift_valley",
+                "cases": {
+                    "positive": 10121,
+                    "negative": 8661
+                }
+            },
+            {
+                "county": "turkana",
+                "region": "rift_valley",
+                "cases": {
+                    "positive": 8189,
+                    "negative": 8217
+                }
+            },
+            {
+                "county": "turkana",
+                "region": "rift_valley",
+                "cases": {
+                    "positive": 7067,
+                    "negative": 18153
+                }
+            },
+            {
+                "county": "turkana",
+                "region": "rift_valley",
+                "cases": {
+                    "positive": 7586,
+                    "negative": 4238
+                }
+            },
+            {
+                "county": "kakamega",
+                "region": "western",
+                "cases": {
+                    "positive": 7586,
+                    "negative": 5148
+                }
+            },
+            {
+                "county": "kakamega",
+                "region": "western",
+                "cases": {
+                    "positive": 11577,
+                    "negative": 2092
+                }
+            },
+            {
+                "county": "kakamega",
+                "region": "western",
+                "cases": {
+                    "positive": 1794,
+                    "negative": 7092
+                }
+            },
+            {
+                "county": "kakamega",
+                "region": "western",
+                "cases": {
+                    "positive": 7961,
+                    "negative": 6618
+                }
+            },
+            {
+                "county": "kisumu",
+                "region": "nyanza",
+                "cases": {
+                    "positive": 7961,
+                    "negative": 6689
+                }
+            },
+            {
+                "county": "kisumu",
+                "region": "nyanza",
+                "cases": {
+                    "positive": 7961,
+                    "negative": 3835
+                }
+            },
+            {
+                "county": "kisumu",
+                "region": "nyanza",
+                "cases": {
+                    "positive": 6231,
+                    "negative": 3918
+                }
+            },
+            {
+                "county": "kisumu",
+                "region": "nyanza",
+                "cases": {
+                    "positive": 7961,
+                    "negative": 6618
+                }
+            },
+            {
+                "county": "kisumu",
+                "region": "nyanza",
+                "cases": {
+                    "positive": 3105,
+                    "negative": 2464
+                }
+            },
+            {
+                "county": "nairobi",
+                "region": "nairobi",
+                "cases": {
+                    "positive": 6438,
+                    "negative": 13381
+                }
+            }
+        ],
+        "lab_tests": [
+            {
+                "name": "karis",
+                "tests": 417
+            },
+            {
+                "name": "healthy",
+                "tests": 1641
+            },
+            {
+                "name": "mikaa",
+                "tests": 335
+            },
+            {
+                "name": "emu",
+                "tests": 3033
+            },
+            {
+                "name": "sandhu",
+                "tests": 2534
+            }
+        ]
+    },
+    "cases_by_month": [
+        {
+            "month": "january",
+            "cases": {
+                "positive": 10192,
+                "negative": 14800
+            }
+        },
+        {
+            "month": "february",
+            "cases": {
+                "positive": 11330,
+                "negative": 27951
+            }
+        },
+        {
+            "month": "march",
+            "cases": {
+                "positive": 14645,
+                "negative": 13684
+            }
+        },
+        {
+            "month": "april",
+            "cases": {
+                "positive": 10262,
+                "negative": 10667
+            }
+        },
+        {
+            "month": "may",
+            "cases": {
+                "positive": 30893,
+                "negative": 24029
+            }
+        },
+        {
+            "month": "june",
+            "cases": {
+                "positive": 19062,
+                "negative": 11386
+            }
+        },
+        {
+            "month": "july",
+            "cases": {
+                "positive": 30563,
+                "negative": 39573
+            }
+        },
+        {
+            "month": "august",
+            "cases": {
+                "positive": 37159,
+                "negative": 13457
+            }
+        },
+        {
+            "month": "september",
+            "cases": {
+                "positive": 28952,
+                "negative": 13095
+            }
+        },
+        {
+            "month": "october",
+            "cases": {
+                "positive": 15988,
+                "negative": 14103
+            }
+        },
+        {
+            "month": "november",
+            "cases": {
+                "positive": 21867,
+                "negative": 25683
+            }
+        },
+        {
+            "month": "december",
+            "cases": {
+                "positive": 12650,
+                "negative": 23832
+            }
+        }
+    ]
+}
