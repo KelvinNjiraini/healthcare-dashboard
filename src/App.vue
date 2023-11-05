@@ -124,9 +124,7 @@ onMounted(async () => {
             <RegisteredLabs :labInfo="labInfo" />
             <PositiveCases :positiveCases="positiveCases" />
             <NegativeCases :negativeCases="negativeCases" />
-            <div class="bg-white rounded-lg md:col-span-2 md:row-span-2">
-                <TopologyMap />
-            </div>
+            <TopologyMap />
             <StatesLeaderboard :countyCases="countyCases" />
             <LabLeaderboard :labCases="labCases" />
             <CasesByMonth />

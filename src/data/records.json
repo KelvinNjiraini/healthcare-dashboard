@@ -12,6 +12,16 @@
         "females": 518,
         "travel": 123932,
         "screening": 47965,
+        "cases_by_region": [
+            ["ke-co", 78943],
+            ["ke-ny", 93057],
+            ["ke-ce", 127392],
+            ["ke-na", 45213],
+            ["ke-565", 159304],
+            ["ke-rv", 41654],
+            ["ke-we", 72566],
+            ["ke-ne", 99833]
+        ],
         "cases_by_county": [
             {
                 "county": "mombasa",
