@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div></div>
+        <!-- <div></div> -->
     </div>
 </template>
 <script>
@@ -25,7 +25,8 @@ export default {
         this.target = Highcharts.chart(this.$el, {
             chart: {
                 type: 'column',
-                height: 250,
+                height: 270,
+                // width: 700,
             },
             colors: ['#D2DDEC', '#D13F4A'],
             // subtitle: {
@@ -34,7 +35,10 @@ export default {
             //         'href="https://www.indexmundi.com/agriculture/?commodity=corn">indexmundi</a>',
             //     align: 'left',
             // },
-            title: '',
+            title: {
+                text: null,
+            },
+
             xAxis: {
                 categories: [
                     'Jan',
@@ -57,6 +61,14 @@ export default {
             },
             yAxis: {
                 min: 0,
+                title: {
+                    text: null,
+                },
+                labels: {
+                    style: {
+                        color: '#95AAC9',
+                    },
+                },
             },
             tooltip: {
                 // valueSuffix: ' (1000 MT)',
@@ -81,6 +93,15 @@ export default {
                     data: this.positive,
                 },
             ],
+            responsive: {
+                rules: [
+                    {
+                        condition: {
+                            maxWidth: 1000,
+                        },
+                    },
+                ],
+            },
         });
     },
     beforeDestroy: function () {

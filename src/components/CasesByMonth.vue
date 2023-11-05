@@ -4,21 +4,25 @@ import BarGraph from './charts/BarGraph.vue';
 import { useResource } from './../composables/resource';
 
 const casesByMonth = ref([]);
-const negativeCases = ref([]);
-const positiveCases = ref([]);
+const isLoading = ref(false);
+// const negativeCases = ref([]);
+// const positiveCases = ref([]);
 
 onMounted(async () => {
+    isLoading.value = true;
     const fetchedData = await useResource('cases_by_month');
     casesByMonth.value = fetchedData;
+    isLoading.value = false;
 });
 </script>
 <template>
-    <div class="bg-white rounded-lg md:row-span-2 flex flex-col">
+    <div class="bg-white rounded-lg md:col-span-2 flex flex-col">
         <div class="border-b border-b-light-gray p-3">
             <h4 class="font-semibold">Covid-19 Cases</h4>
         </div>
         <div class="w-full">
-            <BarGraph :casesByMonth="casesByMonth" />
+            <p v-if="isLoading">Loading...</p>
+            <BarGraph v-if="!isLoading" :casesByMonth="casesByMonth" />
         </div>
     </div>
 </template>

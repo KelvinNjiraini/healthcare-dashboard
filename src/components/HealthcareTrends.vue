@@ -2,6 +2,7 @@
 import { onMounted, ref, reactive, watch } from 'vue';
 import { useResource } from './../composables/resource';
 import { useInitializeData } from './../composables/initializeTrends';
+import LineGraph from './charts/LineGraph.vue';
 
 const props = defineProps({
     duration: {
@@ -68,6 +69,7 @@ onMounted(async () => {
                         src="./../assets/graph-placeholder.svg"
                         alt="Graph placeholder"
                     />
+                    <!-- <LineGraph /> -->
                 </div>
             </div>
             <div class="flex justify-between items-center">

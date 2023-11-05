@@ -10,6 +10,7 @@ import NegativeCases from './components/NegativeCases.vue';
 import StatesLeaderboard from './components/StatesLeaderboard.vue';
 import LabLeaderboard from './components/LabLeaderboard.vue';
 import CasesByMonth from './components/CasesByMonth.vue';
+import TopologyMap from './components/charts/TopologyMap.vue';
 
 const currentDuration = ref('day');
 const labInfo = reactive({});
@@ -18,43 +19,53 @@ const negativeCases = reactive({});
 const countyCases = ref([]);
 const labCases = ref([]);
 const casesByMonth = ref([]);
+const isLoading = ref(false);
 
 onMounted(async () => {
-    const fetchedData = await useResource('today');
-    const {
-        registered_labs,
-        registered_labs_increase,
-        citizens_positive_cases,
-        citizens_positive_cases_increase,
-        males,
-        females,
-        citizens_negative_cases_increase,
-        citizens_negative_cases,
-        cases_by_county,
-        lab_tests,
-        cases_by_month,
-    } = fetchedData;
-    // setting the lab data
-    labInfo.registered_labs = registered_labs;
-    labInfo.registered_labs_increase = registered_labs_increase;
+    isLoading.value = true;
+    try {
+        const fetchedData = await useResource('today');
+        const {
+            registered_labs,
+            registered_labs_increase,
+            citizens_positive_cases,
+            citizens_positive_cases_increase,
+            males,
+            females,
+            citizens_negative_cases_increase,
+            citizens_negative_cases,
+            cases_by_county,
+            lab_tests,
+            cases_by_month,
+        } = fetchedData;
+        // setting the lab data
+        labInfo.registered_labs = registered_labs;
+        labInfo.registered_labs_increase = registered_labs_increase;
 
-    // setting the positive cases
-    positiveCases.positive_cases = citizens_positive_cases;
-    positiveCases.positive_cases_increase = citizens_positive_cases_increase;
-    positiveCases.males = males;
-    positiveCases.females = females;
+        // setting the positive cases
+        positiveCases.positive_cases = citizens_positive_cases;
+        positiveCases.positive_cases_increase =
+            citizens_positive_cases_increase;
+        positiveCases.males = males;
+        positiveCases.females = females;
 
-    // setting negative cases
-    negativeCases.negative_cases_increase = citizens_negative_cases_increase;
-    negativeCases.negative_cases = citizens_negative_cases;
-    negativeCases.males = males;
-    negativeCases.females = females;
+        // setting negative cases
+        negativeCases.negative_cases_increase =
+            citizens_negative_cases_increase;
+        negativeCases.negative_cases = citizens_negative_cases;
+        negativeCases.males = males;
+        negativeCases.females = females;
 
-    // setting county cases
-    countyCases.value = cases_by_county;
+        // setting county cases
+        countyCases.value = cases_by_county;
 
-    // setting lab cases
-    labCases.value = lab_tests;
+        // setting lab cases
+        labCases.value = lab_tests;
+    } catch (err) {
+        console.log(err);
+    } finally {
+        isLoading.value = false;
+    }
 });
 </script>
 
@@ -114,7 +125,7 @@ onMounted(async () => {
             <PositiveCases :positiveCases="positiveCases" />
             <NegativeCases :negativeCases="negativeCases" />
             <div class="bg-white rounded-lg md:col-span-2 md:row-span-2">
-                map of kenya
+                <TopologyMap />
             </div>
             <StatesLeaderboard :countyCases="countyCases" />
             <LabLeaderboard :labCases="labCases" />
