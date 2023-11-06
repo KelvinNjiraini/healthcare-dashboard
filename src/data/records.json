@@ -12,6 +12,156 @@
         "females": 518,
         "travel": 123932,
         "screening": 47965,
+        "total_tested_monthly": [
+            {
+                "month": "Jan",
+                "value": 50373
+            },
+            {
+                "month": "Feb",
+                "value": 37533
+            },
+            {
+                "month": "Mar",
+                "value": 59473
+            },
+            {
+                "month": "Apr",
+                "value": 92043
+            },
+            {
+                "month": "May",
+                "value": 53753
+            },
+            {
+                "month": "Jun",
+                "value": 50373
+            },
+            {
+                "month": "Jul",
+                "value": 165493
+            },
+            {
+                "month": "Aug",
+                "value": 67514
+            },
+            {
+                "month": "Sep",
+                "value": 57654
+            },
+            {
+                "month": "Oct",
+                "value": 93024
+            },
+            {
+                "month": "Nov",
+                "value": 15448
+            },
+            {
+                "month": "Dec",
+                "value": 65543
+            }
+        ],
+        "citizens_tested_monthly": [
+            {
+                "month": "Jan",
+                "value": 97483
+            },
+            {
+                "month": "Feb",
+                "value": 38394
+            },
+            {
+                "month": "Mar",
+                "value": 59473
+            },
+            {
+                "month": "Apr",
+                "value": 64849
+            },
+            {
+                "month": "May",
+                "value": 53753
+            },
+            {
+                "month": "Jun",
+                "value": 63394
+            },
+            {
+                "month": "Jul",
+                "value": 73942
+            },
+            {
+                "month": "Aug",
+                "value": 54493
+            },
+            {
+                "month": "Sep",
+                "value": 36843
+            },
+            {
+                "month": "Oct",
+                "value": 38394
+            },
+            {
+                "month": "Nov",
+                "value": 15448
+            },
+            {
+                "month": "Dec",
+                "value": 37844
+            }
+        ],
+        "foreigners_tested_monthly": [
+            {
+                "month": "Jan",
+                "value": 50373
+            },
+            {
+                "month": "Feb",
+                "value": 48374
+            },
+            {
+                "month": "Mar",
+                "value": 94738
+            },
+            {
+                "month": "Apr",
+                "value": 39554
+            },
+            {
+                "month": "May",
+                "value": 39464
+            },
+            {
+                "month": "Jun",
+                "value": 50373
+            },
+            {
+                "month": "Jul",
+                "value": 3784
+            },
+            {
+                "month": "Aug",
+                "value": 3553
+            },
+            {
+                "month": "Sep",
+                "value": 57654
+            },
+            {
+                "month": "Oct",
+                "value": 93024
+            },
+            {
+                "month": "Nov",
+                "value": 15448
+            },
+            {
+                "month": "Dec",
+                "value": 66743
+            }
+        ],
         "cases_by_region": [
             ["ke-co", 78943],
             ["ke-ny", 93057],

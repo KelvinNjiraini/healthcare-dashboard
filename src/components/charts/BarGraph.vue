@@ -56,7 +56,7 @@ export default {
                 ],
                 // crosshair: true,
                 accessibility: {
-                    description: 'Countries',
+                    description: 'Months',
                 },
             },
             yAxis: {

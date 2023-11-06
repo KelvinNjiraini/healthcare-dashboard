@@ -38,7 +38,9 @@ const chartOptions = ref({
         // minColor: '#E5ECF4',
         // maxColor: '#E5ECF4',
     },
-
+    legend: {
+        enabled: false,
+    },
     series: [
         {
             data: data,

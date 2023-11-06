@@ -11,6 +11,7 @@ const props = defineProps({
     },
 });
 const currentDuration = ref(props.duration);
+const isLoading = ref(false);
 
 const trends = reactive({
     total_tested: null,
@@ -18,18 +19,39 @@ const trends = reactive({
     foreigners_tested: null,
     travel: null,
     screening: null,
+    totalTestedMonthly: [],
+    citizensTestedMonthly: [],
+    foreignersTestedMonthly: [],
 });
 
 async function initializeLocalTrends() {
-    const fetchedTrends = await useResource('today');
-    const { totalTested, citizensTested, travel, screening, foreignersTested } =
-        useInitializeData(fetchedTrends, currentDuration);
-    // setting reactive data
-    trends.total_tested = totalTested;
-    trends.citizens_tested = citizensTested;
-    trends.travel = travel;
-    trends.screening = screening;
-    trends.foreigners_tested = foreignersTested;
+    isLoading.value = true;
+    try {
+        const fetchedTrends = await useResource('today');
+        const {
+            totalTested,
+            citizensTested,
+            travel,
+            screening,
+            foreignersTested,
+        } = useInitializeData(fetchedTrends, currentDuration);
+        // setting derived data
+        trends.total_tested = totalTested;
+        trends.citizens_tested = citizensTested;
+        trends.travel = travel;
+        trends.screening = screening;
+        trends.foreigners_tested = foreignersTested;
+
+        // setting area charts
+        trends.totalTestedMonthly = fetchedTrends.total_tested_monthly;
+        trends.citizensTestedMonthly = fetchedTrends.citizens_tested_monthly;
+        trends.foreignersTestedMonthly =
+            fetchedTrends.foreigners_tested_monthly;
+    } catch (err) {
+        console.log(err);
+    } finally {
+        isLoading.value = false;
+    }
 }
 
 onMounted(async () => {
@@ -55,7 +77,7 @@ onMounted(async () => {
         <div
             class="p-3 border-r md:border-r-background flex flex-col space-y-4 justify-between"
         >
-            <div class="flex justify-between items-center">
+            <div class="flex justify-between w-full">
                 <div class="flex flex-col space-y-2">
                     <span class="capitalize text-primary text-sm">
                         Total Tested
@@ -64,12 +86,12 @@ onMounted(async () => {
                         {{ trends.total_tested }}
                     </h1>
                 </div>
-                <div class="self-end">
-                    <img
-                        src="./../assets/graph-placeholder.svg"
-                        alt="Graph placeholder"
+                <div class="self-end w-1/2">
+                    <p v-if="isLoading">Loading ...</p>
+                    <LineGraph
+                        :chartData="trends.totalTestedMonthly"
+                        v-if="!isLoading"
                     />
-                    <!-- <LineGraph /> -->
                 </div>
             </div>
             <div class="flex justify-between items-center">
@@ -86,7 +108,7 @@ onMounted(async () => {
         <div
             class="p-3 border-r md:border-r-background flex flex-col space-y-4 justify-between"
         >
-            <div class="flex justify-between items-center">
+            <div class="flex justify-between">
                 <div class="flex flex-col space-y-2">
                     <span class="text-sm capitalize text-primary">
                         Citizens Tested
@@ -95,10 +117,15 @@ onMounted(async () => {
                         {{ trends.citizens_tested }}
                     </h1>
                 </div>
-                <div class="self-end">
-                    <img
+                <div class="self-end w-1/2">
+                    <!-- <img
                         src="./../assets/graph-placeholder.svg"
                         alt="Graph placeholder"
+                    /> -->
+                    <p v-if="isLoading">Loading ...</p>
+                    <LineGraph
+                        :chartData="trends.citizensTestedMonthly"
+                        v-if="!isLoading"
                     />
                 </div>
             </div>
@@ -128,7 +155,7 @@ onMounted(async () => {
             </div>
         </div>
         <div class="p-3 border-r flex flex-col space-y-4 justify-between">
-            <div class="flex justify-between items-center">
+            <div class="flex justify-between">
                 <div class="flex flex-col space-y-2">
                     <span class="capitalize text-primary">
                         Foreigners Tested</span
@@ -137,10 +164,11 @@ onMounted(async () => {
                         {{ trends.foreigners_tested }}
                     </h1>
                 </div>
-                <div class="self-end">
-                    <img
-                        src="./../assets/graph-placeholder.svg"
-                        alt="Graph placeholder"
+                <div class="self-end w-1/2">
+                    <p v-if="isLoading">Loading ...</p>
+                    <LineGraph
+                        :chartData="trends.foreignersTestedMonthly"
+                        v-if="!isLoading"
                     />
                 </div>
             </div>
