@@ -1,7 +1,9 @@
 export const base_url = 'http://localhost:8000';
 
 export function addComma(num) {
-    //
+    const finalNum = new Intl.NumberFormat().format(num);
+
+    return finalNum;
 }
 
 // const url =

@@ -1,5 +1,6 @@
 <script setup>
 import { Icon } from '@iconify/vue';
+import { addComma } from '../utils/constants';
 
 const props = defineProps({
     positiveCases: Object,
@@ -23,12 +24,14 @@ const { positiveCases } = props;
                 </span>
                 <div class="flex space-x-2 items-center">
                     <h3 class="text-2xl font-semibold">
-                        {{ positiveCases.positive_cases }}
+                        {{ addComma(positiveCases.positive_cases) }}
                     </h3>
                     <div class="flex space-x-1 self-end text-light-green">
                         <Icon icon="formkit:arrowup" />
                         <span
-                            >{{ positiveCases.positive_cases_increase }}%</span
+                            >{{
+                                addComma(positiveCases.positive_cases_increase)
+                            }}%</span
                         >
                     </div>
                 </div>
@@ -38,11 +41,11 @@ const { positiveCases } = props;
             <div class="flex justify-between items-center">
                 <div class="flex gap-1 text-sm text-primary">
                     <span class="font-semibold uppercase">Males:</span
-                    ><span>{{ positiveCases.males }}</span>
+                    ><span>{{ addComma(positiveCases.males) }}</span>
                 </div>
                 <div class="flex gap-1 text-sm text-primary">
                     <span class="font-semibold uppercase">Females:</span
-                    ><span>{{ positiveCases.females }}</span>
+                    ><span>{{ addComma(positiveCases.females) }}</span>
                 </div>
             </div>
         </div>

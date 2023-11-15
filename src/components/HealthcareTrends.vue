@@ -3,6 +3,7 @@ import { onMounted, ref, reactive, watch } from 'vue';
 import { useResource } from './../composables/resource';
 import { useInitializeData } from './../composables/initializeTrends';
 import LineGraph from './charts/LineGraph.vue';
+import { addComma } from '../utils/constants';
 
 const props = defineProps({
     duration: {
@@ -16,7 +17,11 @@ const isLoading = ref(false);
 const trends = reactive({
     total_tested: null,
     citizens_tested: null,
+    citizens_positive: null,
+    citizens_negative: null,
     foreigners_tested: null,
+    foreigners_positive: null,
+    foreigners_negative: null,
     travel: null,
     screening: null,
     totalTestedMonthly: [],
@@ -34,6 +39,10 @@ async function initializeLocalTrends() {
             travel,
             screening,
             foreignersTested,
+            citizens_positive_cases,
+            citizens_negative_cases,
+            foreigners_positive_cases,
+            foreigners_negative_cases,
         } = useInitializeData(fetchedTrends, currentDuration);
         // setting derived data
         trends.total_tested = totalTested;
@@ -41,7 +50,10 @@ async function initializeLocalTrends() {
         trends.travel = travel;
         trends.screening = screening;
         trends.foreigners_tested = foreignersTested;
-
+        trends.citizens_negative = citizens_negative_cases;
+        trends.citizens_positive = citizens_positive_cases;
+        trends.foreigners_negative = foreigners_negative_cases;
+        trends.foreigners_positive = foreigners_positive_cases;
         // setting area charts
         trends.totalTestedMonthly = fetchedTrends.total_tested_monthly;
         trends.citizensTestedMonthly = fetchedTrends.citizens_tested_monthly;
@@ -83,7 +95,7 @@ onMounted(async () => {
                         Total Tested
                     </span>
                     <h1 class="text-3xl font-bold">
-                        {{ trends.total_tested }}
+                        {{ addComma(trends.total_tested) }}
                     </h1>
                 </div>
                 <div class="self-end w-1/2">
@@ -97,11 +109,11 @@ onMounted(async () => {
             <div class="flex justify-between items-center">
                 <div class="flex gap-1 text-sm text-primary">
                     <span class="font-semibold uppercase">Travel:</span
-                    ><span>{{ trends.travel }}</span>
+                    ><span>{{ addComma(trends.travel) }}</span>
                 </div>
                 <div class="flex gap-1 text-sm text-primary">
                     <span class="font-semibold uppercase">Screening:</span
-                    ><span>{{ trends.screening }}</span>
+                    ><span>{{ addComma(trends.screening) }}</span>
                 </div>
             </div>
         </div>
@@ -114,7 +126,7 @@ onMounted(async () => {
                         Citizens Tested
                     </span>
                     <h1 class="text-3xl font-bold">
-                        {{ trends.citizens_tested }}
+                        {{ addComma(trends.citizens_tested) }}
                     </h1>
                 </div>
                 <div class="self-end w-1/2">
@@ -139,7 +151,9 @@ onMounted(async () => {
                         ></div>
                         Positive
                     </div>
-                    <span class="text-xs"> 123,932</span>
+                    <span class="text-xs">
+                        {{ addComma(trends.citizens_positive) }}</span
+                    >
                 </div>
                 <div class="flex gap-1 text-sm text-primary items-center">
                     <div
@@ -150,7 +164,9 @@ onMounted(async () => {
                         ></div>
                         Negative
                     </div>
-                    <span class="text-xs"> 123,932</span>
+                    <span class="text-xs">
+                        {{ addComma(trends.citizens_negative) }}</span
+                    >
                 </div>
             </div>
         </div>
@@ -161,7 +177,7 @@ onMounted(async () => {
                         Foreigners Tested</span
                     >
                     <h1 class="text-3xl font-bold">
-                        {{ trends.foreigners_tested }}
+                        {{ addComma(trends.foreigners_tested) }}
                     </h1>
                 </div>
                 <div class="self-end w-1/2">
@@ -182,7 +198,9 @@ onMounted(async () => {
                         ></div>
                         Positive
                     </div>
-                    <span class="text-xs"> 123,932</span>
+                    <span class="text-xs">
+                        {{ addComma(trends.foreigners_positive) }}</span
+                    >
                 </div>
                 <div class="flex gap-1 text-sm text-primary items-center">
                     <div
@@ -193,7 +211,9 @@ onMounted(async () => {
                         ></div>
                         Negative
                     </div>
-                    <span class="text-xs"> 123,932</span>
+                    <span class="text-xs">
+                        {{ addComma(trends.foreigners_negative) }}</span
+                    >
                 </div>
             </div>
         </div>

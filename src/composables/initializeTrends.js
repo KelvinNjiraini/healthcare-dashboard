@@ -25,5 +25,15 @@ export function useInitializeData(fetchedData, duration) {
         foreigners_positive_cases + foreigners_negative_cases;
     const totalTested = citizensTested + foreignersTested;
 
-    return { travel, screening, citizensTested, foreignersTested, totalTested };
+    return {
+        travel,
+        screening,
+        citizensTested,
+        foreignersTested,
+        totalTested,
+        citizens_negative_cases,
+        citizens_positive_cases,
+        foreigners_negative_cases,
+        foreigners_positive_cases,
+    };
 }

@@ -1,5 +1,6 @@
 <script setup>
 import { watchEffect, ref } from 'vue';
+import { addComma } from '../utils/constants';
 const props = defineProps({
     countyCases: Array,
 });
@@ -49,13 +50,15 @@ watchEffect(() => {
                         >
                     </td>
                     <td width="33%" class="p-3" align="right">
-                        <span>{{ record.cases.positive }}</span>
+                        <span>{{ addComma(record.cases.positive) }}</span>
                     </td>
                     <td width="33%" class="p-3" align="right">
-                        <span>{{ record.cases.negative }}</span>
+                        <span>{{ addComma(record.cases.negative) }}</span>
                     </td>
                 </tr>
             </table>
         </div>
     </div>
 </template>
+
+<style scoped></style>

@@ -1,5 +1,6 @@
 <script setup>
 import { watchEffect, ref } from 'vue';
+import { addComma } from '../utils/constants';
 const props = defineProps({
     labCases: Array,
 });
@@ -39,7 +40,7 @@ watchEffect(() => {
                         >
                     </td>
                     <td width="30%" class="p-3" align="right">
-                        <span>{{ lab.tests }}</span>
+                        <span>{{ addComma(lab.tests) }}</span>
                     </td>
                 </tr>
             </table>
