@@ -3,6 +3,7 @@
 import { useResource } from '../../composables/resource';
 import kenyaMap from './../../data/kenya-map.json';
 import { ref, onMounted } from 'vue';
+import records from './../../data/records.json';
 
 const isLoading = ref(false);
 const data = ref([]);
@@ -68,7 +69,8 @@ const chartOptions = ref({
 onMounted(async () => {
     isLoading.value = true;
     try {
-        const fetchedData = await useResource('today');
+        // const fetchedData = await useResource('today');
+        const fetchedData = records.today;
         data.value = fetchedData.cases_by_region;
     } catch (error) {
         console.log(error);

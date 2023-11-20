@@ -11,6 +11,7 @@ import StatesLeaderboard from './components/StatesLeaderboard.vue';
 import LabLeaderboard from './components/LabLeaderboard.vue';
 import CasesByMonth from './components/CasesByMonth.vue';
 import TopologyMap from './components/charts/TopologyMap.vue';
+import records from './data/records.json';
 
 const currentDuration = ref('day');
 const labInfo = reactive({});
@@ -24,7 +25,8 @@ const isLoading = ref(false);
 onMounted(async () => {
     isLoading.value = true;
     try {
-        const fetchedData = await useResource('today');
+        // const fetchedData = await useResource('today')
+        const fetchedData = records.today;
         const {
             registered_labs,
             registered_labs_increase,

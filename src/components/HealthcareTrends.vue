@@ -4,6 +4,7 @@ import { useResource } from './../composables/resource';
 import { useInitializeData } from './../composables/initializeTrends';
 import LineGraph from './charts/LineGraph.vue';
 import { addComma } from '../utils/constants';
+import records from './../data/records.json';
 
 const props = defineProps({
     duration: {
@@ -30,9 +31,10 @@ const trends = reactive({
 });
 
 async function initializeLocalTrends() {
-    isLoading.value = true;
+    // isLoading.value = true;
     try {
-        const fetchedTrends = await useResource('today');
+        // const fetchedTrends = await useResource('today');
+        const fetchedTrends = records.today;
         const {
             totalTested,
             citizensTested,
@@ -61,8 +63,6 @@ async function initializeLocalTrends() {
             fetchedTrends.foreigners_tested_monthly;
     } catch (err) {
         console.log(err);
-    } finally {
-        isLoading.value = false;
     }
 }
 
@@ -99,11 +99,8 @@ onMounted(async () => {
                     </h1>
                 </div>
                 <div class="self-end w-1/2">
-                    <p v-if="isLoading">Loading ...</p>
-                    <LineGraph
-                        :chartData="trends.totalTestedMonthly"
-                        v-if="!isLoading"
-                    />
+                    <!-- <p v-if="isLoading">Loading ...</p> -->
+                    <LineGraph :chartData="trends.totalTestedMonthly" />
                 </div>
             </div>
             <div class="flex justify-between items-center">
@@ -134,11 +131,8 @@ onMounted(async () => {
                         src="./../assets/graph-placeholder.svg"
                         alt="Graph placeholder"
                     /> -->
-                    <p v-if="isLoading">Loading ...</p>
-                    <LineGraph
-                        :chartData="trends.citizensTestedMonthly"
-                        v-if="!isLoading"
-                    />
+                    <!-- <p v-if="isLoading">Loading ...</p> -->
+                    <LineGraph :chartData="trends.citizensTestedMonthly" />
                 </div>
             </div>
             <div class="flex justify-between items-center">
@@ -181,11 +175,8 @@ onMounted(async () => {
                     </h1>
                 </div>
                 <div class="self-end w-1/2">
-                    <p v-if="isLoading">Loading ...</p>
-                    <LineGraph
-                        :chartData="trends.foreignersTestedMonthly"
-                        v-if="!isLoading"
-                    />
+                    <!-- <p v-if="isLoading">Loading ...</p> -->
+                    <LineGraph :chartData="trends.foreignersTestedMonthly" />
                 </div>
             </div>
             <div class="flex justify-between items-center">
